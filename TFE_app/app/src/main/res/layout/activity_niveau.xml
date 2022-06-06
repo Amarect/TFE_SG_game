@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/fond_hub">
+
+        <RelativeLayout
+            android:id="@+id/Layout_consigne"
+            android:layout_width="match_parent"
+            android:layout_height="74dp"
+            android:background="@drawable/haut_niveau">
+
+            <TextView
+                android:id="@+id/txt_consigne"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:fontFamily="@font/offenbacher"
+                android:text="Trouve au moins 2 erreurs et 5 defauts qui font 6"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="30sp" />
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="456dp"
+            android:layout_below="@+id/Layout_consigne"
+            android:contentDescription="@android:string/untitled">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/code_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+
+                <RelativeLayout
+                    android:id="@+id/layout_erreurs"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </ScrollView>
+
+        <ImageView
+            android:id="@+id/effect_speed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/Layout_consigne"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/background_speed"
+            android:visibility="invisible"
+            tools:visibility="visible" />
+
+        <RelativeLayout
+            android:id="@+id/Layout_end_niveau"
+            android:layout_width="match_parent"
+            android:layout_height="197dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="0dp"
+            android:background="@drawable/score_niveau"
+            android:visibility="invisible">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_end_niveau"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_alignStart="@+id/txt_end_niveau"
+                android:layout_alignEnd="@+id/txt_end_niveau"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="60dp"
+                android:layout_marginEnd="60dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/btn_quit_niveau"
+                android:fontFamily="casual"
+                android:text="Retour map"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_end_niveau"
+                android:layout_width="295dp"
+                android:layout_height="41dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="50dp"
+                android:fontFamily="@font/offenbacher"
+                android:text="TextView"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="40sp" />
+
+            <ImageView
+                android:id="@+id/view_po1"
+                android:layout_width="52dp"
+                android:layout_height="45dp"
+                android:layout_alignStart="@+id/txt_end_niveau"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="31dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginBottom="104dp"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/po"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/txt_score1"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_below="@+id/view_po2"
+                android:layout_alignStart="@+id/view_po2"
+                android:layout_alignEnd="@+id/view_po2"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="-100dp"
+                android:layout_marginEnd="0dp"
+                android:fontFamily="@font/offenbacher"
+                android:text="TextView"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:visibility="invisible"
+                tools:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/view_po2"
+                android:layout_width="52dp"
+                android:layout_height="45dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginBottom="104dp"
+                android:layout_toEndOf="@+id/view_po1"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/po"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/txt_score2"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_below="@+id/view_po2"
+                android:layout_alignStart="@+id/view_po3"
+                android:layout_alignEnd="@+id/view_po3"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="-100dp"
+                android:layout_marginEnd="0dp"
+                android:fontFamily="@font/offenbacher"
+                android:text="TextView"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:visibility="invisible"
+                tools:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/view_po3"
+                android:layout_width="52dp"
+                android:layout_height="45dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginBottom="104dp"
+                android:layout_toEndOf="@+id/view_po2"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/po"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/txt_score3"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_below="@+id/view_po2"
+                android:layout_alignStart="@+id/view_po4"
+                android:layout_alignEnd="@+id/view_po4"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="-100dp"
+                android:layout_marginEnd="0dp"
+                android:fontFamily="@font/offenbacher"
+                android:text="TextView"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:visibility="invisible"
+                tools:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/view_po4"
+                android:layout_width="52dp"
+                android:layout_height="45dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginBottom="104dp"
+                android:layout_toEndOf="@+id/view_po3"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/po"
+                tools:visibility="visible" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/Layout_explication"
+            android:layout_width="match_parent"
+            android:layout_height="456dp"
+            android:layout_below="@+id/Layout_consigne"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/fond_correction"
+            android:visibility="invisible"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/txt_title_explication"
+                android:layout_width="218dp"
+                android:layout_height="54dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/offenbacher"
+                android:text="Correction :"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="40sp" />
+
+            <TextView
+                android:id="@+id/txt_explication"
+                android:layout_width="wrap_content"
+                android:layout_height="365dp"
+                android:layout_below="@+id/txt_title_explication"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="10dp"
+                android:text="TextView"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_close_explication"
+                android:layout_width="181dp"
+                android:layout_height="49dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="100dp"
+                android:layout_marginEnd="100dp"
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/btn_close_correction"
+                android:text="fermer" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/Layout_infos"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/score_niveau"
+            android:translationY="530dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="209dp"
+                android:layout_height="200dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_popo_view"
+                    android:layout_width="80dp"
+                    android:layout_height="65dp"
+                    android:background="@drawable/btn_popo_vue"
+                    android:text="15"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:translationX="0dp"
+                    android:translationY="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.124"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.288" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_popo_time"
+                    android:layout_width="80dp"
+                    android:layout_height="65dp"
+                    android:background="@drawable/btn_popo_vitesse"
+                    android:text="15"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:translationX="0dp"
+                    android:translationY="0dp"
+                    android:translationZ="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/btn_popo_view"
+                    app:layout_constraintTop_toTopOf="@+id/btn_popo_view" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/txt_progressbar"
+                android:layout_width="126dp"
+                android:layout_height="101dp"
+                android:layout_alignEnd="@+id/progress_time_left"
+                android:layout_alignBottom="@+id/progress_time_left"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="29dp"
+                android:layout_marginEnd="6dp"
+                android:layout_marginBottom="4dp"
+                android:text="Temps"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/progress_time_left"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="141dp"
+                android:layout_height="134dp"
+                android:indeterminateOnly="false"
+                android:progressBackgroundTint="#C39E9E"
+                android:progressDrawable="@drawable/progress_bar" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
