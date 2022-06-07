@@ -102,7 +102,6 @@ public class HubActivity extends AppCompatActivity {
             actu_region = user_actu.actu_LvL;
             max_region = user_actu.max_LvL;
             regions = databaseInfo.getRegions_list();
-            System.out.println("ALL GET " + regions);
         }
         catch (Exception e){
             GoBack();
@@ -117,7 +116,6 @@ public class HubActivity extends AppCompatActivity {
     }
 
     private void GenerateRegionsView(){
-        System.out.println("Region " + regions);
         for (int iCompteur =0; iCompteur< regions.size(); iCompteur++){
             //set cadre
             RelativeLayout regionView = new RelativeLayout(getApplicationContext());
@@ -329,7 +327,6 @@ public class HubActivity extends AppCompatActivity {
                         }
                         else{
                             String getJson = result;
-                            System.out.println("GET EMBUSCADES " + getJson);
                             Type regionListType = new TypeToken<ArrayList<Embuscade>>(){}.getType();
                             liste_embuscades = new Gson().fromJson(getJson, regionListType);
                             StartRegion();

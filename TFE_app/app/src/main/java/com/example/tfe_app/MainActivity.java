@@ -118,7 +118,6 @@ public class MainActivity extends AppCompatActivity {
     }
     public void GetRegions(){
 
-        System.out.println("test json regions = " );
 
         String urlConnection = "http://192.168.1.229/TFE/Getregions.php";
 
@@ -139,9 +138,6 @@ public class MainActivity extends AppCompatActivity {
                             String getJson = result;
                             Type regionListType = new TypeToken<ArrayList<Region>>(){}.getType();
                             region_list = new Gson().fromJson(result, regionListType);
-                            System.out.println("JSON GET " +region_list);
-                            System.out.println("Data test2 " + region_list.get(0).nom);
-                            System.out.println("Data test " + region_list.get(0).pathpoints);
 
                             //start a tout
                             startApp();
@@ -151,7 +147,6 @@ public class MainActivity extends AppCompatActivity {
                 //End Write and Read data with URL
             }
         });
-        System.out.println("escape" );
 
     }
 
@@ -160,7 +155,6 @@ public class MainActivity extends AppCompatActivity {
         databaseInfo.setRegions_list(region_list);
         Intent hub = new Intent(MainActivity.this, HubActivity.class);
         hub.putExtra("User", user);
-        System.out.println("JSON GETTED " + region_list);
         hub.putExtra("Liste_regions",region_list);
         hub.putExtra("ActuRegion",0);
         hub.putExtra("Max_region",1);

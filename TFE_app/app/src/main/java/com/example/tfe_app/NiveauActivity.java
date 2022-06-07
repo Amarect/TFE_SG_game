@@ -246,8 +246,6 @@ public class NiveauActivity extends AppCompatActivity {
     public void TempsEcoule(int actu_temps){
         time_left.setMax(actu_temps);
         time_left.setProgress(actu_temps);
-        System.out.println("progress = " + time_left.getProgress());
-        System.out.println("set timer = " + actu_temps);
         actu_temps=actu_temps*1000;
         startCountdown(actu_temps);
     }
@@ -350,7 +348,6 @@ public class NiveauActivity extends AppCompatActivity {
         time_left = time_left ;
         score = score + (time_left*10) ;
         txt_end_niveau.setText("Score : " + score);
-        System.out.println("Score : " + score);
 
         int score1 = niveau.GetTranche_score()[0];
         int score2 = niveau.GetTranche_score()[1];

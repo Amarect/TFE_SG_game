@@ -88,7 +88,6 @@ public class EmbuscadeActivity extends AppCompatActivity {
     }
 
     private void SetRepTxT(){
-        System.out.println("EMBUS " + embuscade.question);
         question.setText(embuscade.question);
         if(embuscade.reponses != null){
             btn_rep1.setText(embuscade.GetReponses()[0]);

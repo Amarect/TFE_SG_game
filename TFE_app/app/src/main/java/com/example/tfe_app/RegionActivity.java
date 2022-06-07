@@ -164,17 +164,14 @@ public class RegionActivity extends AppCompatActivity {
     private void GetPositionPlayer(){
         actu_path_position = user.actu_path_position;
         if(databaseInfo.getActuNiveau() ==-1){
-            System.out.println("CAS 1");
             actu_niveau_position = getNiveauPosition();
             databaseInfo.setActuNiveau(actu_niveau_position);
         }
         if(databaseInfo.getActuNiveau() > databaseInfo.getListe_niveaux().size()){
             Finregion();
-            System.out.println("CAS 2");
         }
         else{
             actu_niveau_position = databaseInfo.getActuNiveau();
-            System.out.println("CAS 3");
         }
 
         player_token = findViewById(R.id.player_token);
@@ -193,23 +190,19 @@ public class RegionActivity extends AppCompatActivity {
         int niveau_pos = 0;
         int [] liste_lvls = actu_region.getPosition_LvL();
         for (int icompteur=0; icompteur < liste_lvls.length;icompteur++){
-            System.out.println( actu_path_position + " == " + liste_lvls[icompteur]);
             if(actu_path_position >= liste_lvls[icompteur]){
                 niveau_pos++;
             }
         }
-        System.out.println("niveau_pos = " + niveau_pos);
         return niveau_pos;
      }
 
     private void AddNiveauxToRegion(LinearLayout maps_container){
         layout_niveaux = findViewById(R.id.layout_niveaux);
         layout_niveaux.setLayoutParams(maps_container.getLayoutParams());
-        System.out.println("nombre de lvl " + actu_region.getPosition_LvL().length);
         for(int niveau=0 ; niveau < actu_region.getPosition_LvL().length; niveau++){
 
             TextView niveau_btn = new TextView(getApplicationContext());
-            System.out.println("actu_niveau Position == " + actu_niveau_position);
             if(niveau >= actu_niveau_position){
                 niveau_btn.setBackgroundResource(R.drawable.lvl_incomplet);
             }
@@ -286,7 +279,6 @@ public class RegionActivity extends AppCompatActivity {
         int min_chance = 1 ;
         int range = max_chance - min_chance;
         int rand = (int)(Math.random() * range) + min_chance;
-        System.out.println("Embuscade = " + rand + " > " + chanceEmbuscade);
         if(rand< chanceEmbuscade){
             return true;
         }
@@ -304,7 +296,6 @@ public class RegionActivity extends AppCompatActivity {
 
     private void MoveToken(int niveauPos,int niveauSelect){
         Path path = new Path();
-        System.out.println("TryMove");
         path.moveTo(dpToPx(actu_region.getpathpoints()[0][actu_path_position]*case_large,this)-size_player, dpToPx(actu_region.getpathpoints()[1][actu_path_position]*case_hauteur,this)-size_player);
         int taille_path =0;
 
@@ -314,7 +305,6 @@ public class RegionActivity extends AppCompatActivity {
 
             if(taille_path>0){
                 embuscade = TestEmbuscade(actu_region.chance_embuscade);
-                System.out.println("TestEmbuscade");
                 if(embuscade){
                     break;
                 }
